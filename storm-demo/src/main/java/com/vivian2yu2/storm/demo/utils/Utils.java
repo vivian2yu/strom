@@ -1,4 +1,4 @@
-package com.dianping.storm.ch01.utils;
+package com.vivian2yu2.storm.demo.utils;
 
 /**
  * Created by vivian on 17/6/27.

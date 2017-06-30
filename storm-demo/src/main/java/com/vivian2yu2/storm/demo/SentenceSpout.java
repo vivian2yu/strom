@@ -1,6 +1,6 @@
-package com.dianping.storm.ch01;
+package com.vivian2yu2.storm.demo;
 
-import com.dianping.storm.ch01.utils.Utils;
+import com.vivian2yu2.storm.demo.utils.Utils;
 import org.apache.storm.spout.SpoutOutputCollector;
 import org.apache.storm.task.TopologyContext;
 import org.apache.storm.topology.OutputFieldsDeclarer;

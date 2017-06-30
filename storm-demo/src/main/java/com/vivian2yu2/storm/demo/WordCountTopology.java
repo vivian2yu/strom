@@ -1,6 +1,6 @@
-package com.dianping.storm.ch01;
+package com.vivian2yu2.storm.demo;
 
-import com.dianping.storm.ch01.utils.Utils;
+import com.vivian2yu2.storm.demo.utils.Utils;
 import org.apache.storm.Config;
 import org.apache.storm.LocalCluster;
 import org.apache.storm.topology.TopologyBuilder;
@@ -25,8 +25,8 @@ public class WordCountTopology {
         TopologyBuilder builder = new TopologyBuilder();
 
         builder.setSpout(SENTENCE_SPOUT_ID, spout);
-        builder.setBolt(SPLIT_BOLT_ID, splitBolt).shuffleGrouping(SENTENCE_SPOUT_ID);
-        builder.setBolt(COUNT_BOLT_ID, countBolt).fieldsGrouping(SPLIT_BOLT_ID, new Fields("word"));
+        builder.setBolt(SPLIT_BOLT_ID, splitBolt, 2).setNumTasks(4).shuffleGrouping(SENTENCE_SPOUT_ID);
+        builder.setBolt(COUNT_BOLT_ID, countBolt, 4).fieldsGrouping(SPLIT_BOLT_ID, new Fields("word"));
         builder.setBolt(REPORT_BOLT_ID, reportBolt).globalGrouping(COUNT_BOLT_ID);
 
         Config config = new Config();

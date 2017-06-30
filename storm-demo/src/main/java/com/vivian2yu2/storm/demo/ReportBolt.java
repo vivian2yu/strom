@@ -1,4 +1,4 @@
-package com.dianping.storm.ch01;
+package com.vivian2yu2.storm.demo;
 
 import org.apache.storm.task.OutputCollector;
 import org.apache.storm.task.TopologyContext;
